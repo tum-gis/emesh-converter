@@ -1,0 +1,18 @@
+[package]
+name = "emesh-converter-core"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Core primitives and operations for converting 3D polygon meshes to other representations."
+
+
+[dependencies]
+ecoord = { workspace = true }
+emesh = { workspace = true }
+egraphics = { workspace = true }
+
+thiserror = { workspace = true }
+nalgebra = { workspace = true }
+rayon = { workspace = true }

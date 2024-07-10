@@ -1,0 +1,20 @@
+[package]
+name = "emesh-converter-cli"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "CLI tool for converting 3D polygon meshes to other representations."
+
+
+[dependencies]
+emesh-converter = { version = "0.0.1-alpha.3", path = "../emesh-converter" }
+
+emesh = { workspace = true }
+egraphics = { workspace = true }
+
+clap = { workspace = true, features = ["derive"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+nalgebra = { workspace = true }
