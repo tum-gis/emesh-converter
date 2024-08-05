@@ -2,8 +2,7 @@
 
 CLI tool for converting 3D polygon meshes to other representations.
 
-> [!WARNING]  
-> The library is at an early stage of development.
+The library is at an early stage of development.
 
 ## Contributing
 

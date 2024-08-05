@@ -9,4 +9,4 @@ description = "Library for converting 3D polygon meshes to other representations
 
 
 [dependencies]
-emesh-converter-core = { version = "0.0.1-alpha.3", path = "../emesh-converter-core" }
+emesh-converter-core = { version = "0.0.1-alpha.4", path = "../emesh-converter-core" }
