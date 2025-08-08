@@ -1,22 +1,26 @@
-use crate::arguments::{Arguments, Commands};
+use crate::cli::{Cli, Commands};
+use anyhow::Result;
 use clap::Parser;
 use std::path::{Path, PathBuf};
-mod arguments;
+mod cli;
 mod commands;
+mod error;
 
-fn main() {
+fn main() -> Result<()> {
     tracing_subscriber::fmt::init();
-    let arguments = Arguments::parse();
+    let cli = Cli::parse();
 
-    match &arguments.command {
+    match &cli.command {
         Commands::ConvertToGraphics {
             input_path,
             output_path,
         } => {
-            let input_file_path = Path::new(&input_path).canonicalize().unwrap();
+            let input_file_path = Path::new(&input_path).canonicalize()?;
             let output_directory_path = PathBuf::from(&output_path);
 
-            commands::convert_to_graphics::run(input_file_path, output_directory_path);
+            commands::convert_to_graphics::run(input_file_path, output_directory_path)?;
         }
     }
+
+    Ok(())
 }
