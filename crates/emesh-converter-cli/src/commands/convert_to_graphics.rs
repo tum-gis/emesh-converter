@@ -1,4 +1,4 @@
-use std::path::PathBuf;
+use std::path::Path;
 
 use crate::error::Error;
 use emesh::Polygon;
@@ -6,8 +6,11 @@ use nalgebra::Point3;
 use std::time::Instant;
 use tracing::info;
 
-pub fn run(input_file_path: PathBuf, output_gltf_file_path: PathBuf) -> Result<(), Error> {
-    info!("Start run on {}", input_file_path.to_str().unwrap());
+pub fn run(
+    input_file_path: impl AsRef<Path>,
+    output_gltf_file_path: impl AsRef<Path>,
+) -> Result<(), Error> {
+    info!("Start run on {}", input_file_path.as_ref().display());
     let _now = Instant::now();
 
     let mut mesh = emesh::Mesh::new(vec![], vec![]);
